@@ -1,10 +1,11 @@
 {
   "name": "intl-translate",
-  "displayName": "intl_translate",
-  "description": "Translate your internationalization files in a couple of seconds",
-  "version": "0.0.1",
+"displayName": "IntlTranslate",
+  "description":"Intl Translate is designed for Flutter developers to streamline the translation of JSON and ARB files, integrating seamlessly with internationalization workflows.",
+  "version": "1.0.1",
+  "publisher": "ebelfrank",
   "engines": {
-    "vscode": "^1.91.0"
+    "vscode": "^1.91.1"
   },
   "categories": [
     "Other"
@@ -12,10 +13,12 @@
   "activationEvents": [],
   "main": "./extension.js",
   "contributes": {
-    "commands": [{
-      "command": "intl-translate.helloWorld",
-      "title": "Hello World"
-    }]
+    "commands": [
+      {
+        "command": "intl-translate.translate",
+        "title": "Intl Translate"
+      }
+    ]
   },
   "scripts": {
     "lint": "eslint .",
@@ -23,12 +26,16 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.91.0",
     "@types/mocha": "^10.0.7",
     "@types/node": "20.x",
-    "eslint": "^8.57.0",
-    "typescript": "^5.4.5",
+    "@types/vscode": "^1.91.0",
     "@vscode/test-cli": "^0.0.9",
-    "@vscode/test-electron": "^2.4.0"
+    "@vscode/test-electron": "^2.4.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "http-proxy-agent": "^7.0.2"
   }
 }
