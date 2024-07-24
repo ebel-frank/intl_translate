@@ -1,4 +1,4 @@
-<div align="center"> <a href="https://github.com/ebel-frank/intl_translate"><img src="assets/logo.png" title="Flutter Snippets" alt="Flutter Intl Translate"></a></div>
+<div align="center"> <a href="https://github.com/ebel-frank/intl_translate"><img src="assets/intl_logo.png" title="Flutter Snippets" alt="Flutter Intl Translate"></a></div>
 
 Intl Translate is designed for Flutter developers to streamline the translation of JSON and ARB files, integrating seamlessly with internationalization workflows. It enables rapid and efficient translation, simplifying the localization of Flutter applications.
 
