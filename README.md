@@ -17,6 +17,10 @@ Intl Translate is designed for Flutter developers to streamline the translation 
 - VS Code: `1.91.1`
 - The input file must be in English, as the package is designed to translate only from English to other languages, and using non-English source files may produce incorrect results.
 
+## License
+
+**[Apache License](https://github.com/ebel-frank/intl_translate/blob/main/LICENSE)**
+
 ## Known Issues
 
 Currently, there are no known issues. If you encounter a bug or have suggestions for additional features, please open an issue or submit a pull request on our GitHub page.
