@@ -1,4 +1,4 @@
-<div align="center"> <a href="https://github.com/ebel-frank/intl_translate"><img src="assets/intl_logo.png" title="Flutter Snippets" alt="Flutter Intl Translate"></a></div>
+<div align="center"> <a href="https://github.com/ebel-frank/intl_translate"><img src="assets/intl_logo.png" width="250" title="Flutter Snippets" alt="Flutter Intl Translate"></a></div>
 
 # Intl Translate
 
@@ -12,17 +12,10 @@ Intl Translate is designed for Flutter developers to streamline the translation 
 
 ![Flutter Intl Translate](https://user-images.githubusercontent.com/50977126/103440815-c75ff400-4c6e-11eb-8050-4abb624ec13e.gif)
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
 ## Requirements
 
-VS Code: `1.91.1`
+- VS Code: `1.91.1`
+- The input file must be in English, as the package is designed to translate only from English to other languages, and using non-English source files may produce incorrect results.
 
 ## Known Issues
 
