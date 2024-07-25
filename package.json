@@ -2,7 +2,7 @@
   "name": "intl-translate",
   "displayName": "IntlTranslate",
   "description": "Intl Translate is designed for Flutter developers to streamline the translation of JSON and ARB files, integrating seamlessly with internationalization workflows.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "ebelfrank",
   "icon": "assets/intl_logo_small.png",
   "engines": {
