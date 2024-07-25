@@ -183,7 +183,7 @@ function activate(context) {
             const translatedChunks = [];
             for (const chunk of chunks) {
                 try {
-                    const translatedChunk = await axios.post('http://localhost:5000/translator?apiKey=' + apiKey, {
+                    const translatedChunk = await axios.post('https://intl-google-translate.vercel.app/translator?apiKey=' + apiKey, {
                         langCode: langCodes[selection],
                         data: chunk
                     });
@@ -217,7 +217,7 @@ function activate(context) {
 }
 
 
-const splitIntoChunks = (data, chunkSize = 5) => {
+const splitIntoChunks = (data, chunkSize = 6) => {
     const entries = Object.entries(data);
     const chunks = [];
     for (let i = 0; i < entries.length; i += chunkSize) {
