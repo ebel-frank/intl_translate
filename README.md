@@ -10,7 +10,7 @@ Intl Translate is designed for Flutter developers to streamline the translation 
 - **Supports `.arb` and `.json` Files**
 - **Accelerates productivity**
 
-![Flutter Intl Translate](https://user-images.githubusercontent.com/50977126/103440815-c75ff400-4c6e-11eb-8050-4abb624ec13e.gif)
+![Flutter Intl Translate](https://github.com/user-attachments/assets/a033e0f3-c785-4cd9-9351-a133e8a4f4b1)
 
 ## Requirements
 
