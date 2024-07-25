@@ -168,27 +168,20 @@ function activate(context) {
             statusBarItem.text = '$(sync~spin) Translating...';
             statusBarItem.show();
 
-            const apiKey = process.env.TRANSLATE_API_KEY;
-
-            // const response = await axios.post('https://intl-google-translate.vercel.app/translate?apiKey='+apiKey, formData, {
-            //     headers: {
-            //         ...formData.getHeaders()
-            //     },
-            //     maxContentLength: Infinity,
-            //     maxBodyLength: Infinity
-            // });
+            // const apiKey = process.env.TRANSLATE_API_KEY;
 
             const chunks = splitIntoChunks(content)
 
             const translatedChunks = [];
             for (const chunk of chunks) {
                 try {
-                    const translatedChunk = await axios.post('https://intl-google-translate.vercel.app/translator?apiKey=' + apiKey, {
+                    const translatedChunk = await axios.post('https://intl-google-translate.vercel.app/translator', {
                         langCode: langCodes[selection],
                         data: chunk
                     });
                     translatedChunks.push(translatedChunk.data);
                 } catch (e) {
+                    // Most likely due to poor internet connection
                     translatedChunks.push(chunk);
                 }
             }
@@ -205,7 +198,7 @@ function activate(context) {
             } else if (error.name === 'AxiosError') {
                 vscode.window.showErrorMessage(error.response.data.message);
             } else {
-                vscode.window.showErrorMessage('Error translating file: ' + error.message);
+                vscode.window.showErrorMessage('An error occured: ' + error.message);
             }
         } finally {
             // Hide the status bar item after a short delay
@@ -222,7 +215,6 @@ const splitIntoChunks = (data, chunkSize = 6) => {
     const chunks = [];
     for (let i = 0; i < entries.length; i += chunkSize) {
         const chunk = Object.fromEntries(entries.slice(i, i + chunkSize));
-        console.log(chunk);
         chunks.push(chunk);
     }
     return chunks;
