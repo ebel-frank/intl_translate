@@ -137,7 +137,7 @@ function activate(context) {
     // The commandId parameter must match the command field in package.json
     const disposable = vscode.commands.registerCommand('intl-translate.translate', async function () {
         // The code you place here will be executed every time your command is executed
-        const input = await vscode.window.showInputBox({ prompt: 'Enter the path to your app_en.arb file' });
+        const input = await vscode.window.showInputBox({ prompt: 'Enter the path to your english translation file (app_en.arb, en.json)' });
         if (!input) {
             vscode.window.showErrorMessage('No file path provided');
             return;
