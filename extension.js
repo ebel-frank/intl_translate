@@ -172,16 +172,28 @@ function activate(context) {
             const chunks = splitIntoChunks(content)
 
             const translatedChunks = [];
-            for (const chunk of chunks) {
+
+            let index = 0; // Initialize an index to iterate through chunks
+            let attempts = 0; // Attempt counter for the current chunk
+            while (index < chunks.length) {
+                let chunk = chunks[index];
                 try {
                     const translatedChunk = await axios.post('https://intl-google-translate.vercel.app/translator', {
                         langCode: langCodes[selection],
                         data: chunk
                     });
                     translatedChunks.push(translatedChunk.data);
+                    index++;
+                    attempts = 0;
                 } catch (e) {
                     // Most likely due to poor internet connection
-                    translatedChunks.push(chunk);
+                    attempts++; // Increment attempts if an error occured
+                    if (attempts == 3) {
+                        translatedChunks.push(chunk);
+                        vscode.window.showErrorMessage('Network Error: Unable to translate some words due to a weak internet connection. Please try again once your connection stabilizes.');
+                        index++; // Move to the next chunk
+                        attempts = 0; // Reset attempts
+                    }
                 }
             }
             const translatedData = Object.assign({}, ...translatedChunks);

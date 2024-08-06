@@ -27,6 +27,11 @@ Currently, there are no known issues. If you encounter a bug or have suggestions
 
 ## Release Notes
 
+### 1.1.0
+
+Added Retry Mechanism: In the event of a poor network connection, the extension attempts to retry the translation up to three times
+Provides clear and actionable error messages to help you diagnose issues quickly
+
 ### 1.0.0
 
 Initial release of Flutter Intl Translate
